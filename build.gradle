@@ -1,0 +1,35 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.4' apply false
+	id 'io.spring.dependency-management' version '1.1.4' apply false
+}
+
+
+group = 'com.palmyralabs.examples'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+	maven {
+        url "https://repo.palmyralabs.com/releases"
+    }
+}
+
+dependencies {
+	implementation 'com.palmyralabs.palmyra:palmyra-spring:1.4.1';
+
+	implementation 'org.springframework.boot:spring-boot-starter:3.3.4'		
+	implementation 'org.springframework.boot:spring-boot-starter-web:3.3.4'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:3.3.4'
+	
+    runtimeOnly 'org.mariadb.jdbc:mariadb-java-client:3.2.0'
+	
+	compileOnly 'org.projectlombok:lombok:1.18.36'
+    annotationProcessor 'org.projectlombok:lombok:1.18.36'
+    
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.3.4'
+}

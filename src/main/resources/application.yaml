@@ -1,0 +1,11 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: validate
+  datasource:
+    url: jdbc:mariadb://localhost:3306/palmyra_demo
+    username: <username>
+    password: <password>
+    default-auto-commit: false
+    driverClassName: org.mariadb.jdbc.Driver
